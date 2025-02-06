@@ -1,12 +1,16 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseEntity = void 0;
-class BaseEntity {
+exports.user = exports.generaid = void 0;
+class generaid {
     constructor() {
-        this.id = this.generateId();
-    }
-    generateId() {
-        return Date.now().toString(36) + Math.random().toString(36).substring(2, 10);
+        this.id = Math.floor(Math.random() * 1000);
     }
 }
-exports.BaseEntity = BaseEntity;
+exports.generaid = generaid;
+class user {
+    constructor(name, email) {
+        this.name = name;
+        this.email = email;
+    }
+}
+exports.user = user;
